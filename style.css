@@ -1,12 +1,9 @@
 /*
-Theme Name: Nutrizionista blog site
+Theme Name: Nutrizionista
 Author: Rebecca Carioni
-Description: Tema per blog di nutrizionista
+Description: Blog
 Version: 1.0
 */
-
-/* css/style.css */
-
 
 /* =========================================================
    Studio Nutrizione — Versione 2 (molto diversa)
@@ -98,6 +95,7 @@ header{
   flex-wrap:wrap;
   gap:14px;
   justify-content:flex-end;
+  list-style-type: none;
 }
 
 .navlinks a{
@@ -456,3 +454,4 @@ footer{
   background: rgba(255,255,255,.65);
 }
 .small{ font-size:.92rem; }
+

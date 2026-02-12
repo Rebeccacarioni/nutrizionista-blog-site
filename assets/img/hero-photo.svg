@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#2ec4b6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#ff7a59" stop-opacity="0.16"/>
+    </linearGradient>
+    <linearGradient id="plate" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.98"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.86"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0f172a" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#fbfbf7"/>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="140" y="120" width="1320" height="760" rx="48" fill="#ffffff" opacity="0.82" stroke="#0f172a" stroke-opacity="0.08"/>
+  </g>
+
+  <!-- Tavolo -->
+  <rect x="220" y="220" width="1160" height="560" rx="32" fill="#f7f4ee" stroke="#0f172a" stroke-opacity="0.06"/>
+
+  <!-- Piatto -->
+  <g transform="translate(820 510)">
+    <circle r="250" fill="url(#plate)" stroke="#0f172a" stroke-opacity="0.08"/>
+    <circle r="200" fill="#ffffff" opacity="0.9" stroke="#0f172a" stroke-opacity="0.06"/>
+    <path d="M0 0 L200 0 A200 200 0 0 1 100 173 Z" fill="#2ec4b6" opacity="0.25"/>
+    <path d="M0 0 L100 173 A200 200 0 0 1 -200 0 Z" fill="#ff7a59" opacity="0.20"/>
+    <path d="M0 0 L-200 0 A200 200 0 0 1 0 -200 Z" fill="#1f3a5f" opacity="0.14"/>
+    <path d="M0 0 L0 -200 A200 200 0 0 1 200 0 Z" fill="#f9c74f" opacity="0.20"/>
+  </g>
+
+  <!-- Verdure / icone -->
+  <g opacity="0.75">
+    <circle cx="420" cy="380" r="56" fill="#2ec4b6" opacity="0.35"/>
+    <circle cx="520" cy="420" r="36" fill="#7ee787" opacity="0.28"/>
+    <circle cx="480" cy="510" r="44" fill="#ff7a59" opacity="0.24"/>
+  </g>
+
+  <!-- Testo soft -->
+  <text x="320" y="700" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="44" font-weight="900" fill="#1f3a5f" opacity="0.85">
+    Nutrizione semplice, concreta, sostenibile
+  </text>
+  <text x="320" y="755" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="24" font-weight="700" fill="#475569" opacity="0.85">
+    Percorsi personalizzati • Educazione alimentare • Abitudini
+  </text>
+</svg>
