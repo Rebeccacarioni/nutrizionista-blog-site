@@ -1,11 +1,22 @@
-    <li class="post-card">
-          <h3 class="post-card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-          <p class="post-card-meta">Pubblicato il <?php the_date(); ?>
+
+    <a class="card" href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>">
+      <div class="feature">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/posts/idratazione.svg" alt="<?php the_title(); ?>" />
+        <div class="tag">
           <?php $cats = get_the_category();
-          if ( $cats ) : ?>
-            in <span class="badge"><?php echo esc_html( $cats[0]->name ); ?></span>
-            <?php endif; ?>
-          </p>
-          <p class="post-card-excerpt"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 25 ) ); ?></p>
-          <a href="<?php the_permalink(); ?>" class="btn btn-primary">Leggi tutto</a>
-    </li>
+          if ( $cats ) : ?> 
+          🏷️ <?php echo esc_html( $cats[0]->name ); ?>
+        <?php endif; ?></div>
+        <div class="date"><?php the_date(); ?></div>
+      </div>
+      <div class="pad">
+        <h3><?php the_title(); ?></h3>
+        <p><?php echo esc_html( wp_trim_words( get_the_excerpt(), 25 ) ); ?></p>
+        <div class="meta-line">
+          <span class="chip">🕒 Lettura: 6 min</span>
+          <span class="chip">📌 Articolo</span>
+        </div>
+        <hr class="sep" />
+        <span class="btn primary">Leggi →</span>
+      </div>
+    </a>
