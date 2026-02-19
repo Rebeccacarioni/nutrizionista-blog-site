@@ -1,7 +1,7 @@
 
     <a class="card" href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>">
       <div class="feature">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/posts/idratazione.svg" alt="<?php the_title(); ?>" />
+        <?php the_post_thumbnail(); ?>
         <div class="tag">
           <?php $cats = get_the_category();
           if ( $cats ) : ?> 

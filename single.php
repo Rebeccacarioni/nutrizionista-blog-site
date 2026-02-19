@@ -38,7 +38,7 @@
 
       <div style="display:flex; gap:10px; flex-wrap:wrap">
         <a class="btn" href="<?php echo home_url('/blog'); ?>">← Torna al blog</a>
-        <a class="btn primary" href="<?php echo home_url('/contatti'); ?>">Contattami</a>
+        <a class="btn primary" href="<?php echo home_url('/contattaci'); ?>">Contattami</a>
       </div>
     </div>
   </article>
