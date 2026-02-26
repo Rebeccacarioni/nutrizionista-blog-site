@@ -18,7 +18,7 @@
 
     <aside class="hero-media" aria-label="Immagine e punti chiave">
       <div class="img">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero-photo.svg" alt="Illustrazione: nutrizione e piatto bilanciato" />
+        <?php the_post_thumbnail(); ?>
       </div>
       <div class="facts">
         <div class="pill">Approccio pratico</div>
@@ -69,59 +69,17 @@
 
   <h2 class="section-title">Ultimi articoli dal blog</h2>
   <div class="grid" aria-label="Ultimi articoli">
-    <a class="card" href="<?php echo home_url('/plate-method'); ?>" aria-label="Apri articolo: Il Plate Method: comporre un pasto equilibrato">
-      <div class="feature">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/posts/plate-method.svg" alt="Immagine in evidenza: Il Plate Method: comporre un pasto equilibrato" />
-        <div class="tag">🏷️ Educazione alimentare</div>
-        <div class="date">08/01/2026</div>
-      </div>
-      <div class="pad">
-        <h3>Il Plate Method: comporre un pasto equilibrato</h3>
-        <p>Un metodo semplice per bilanciare carboidrati, proteine e verdure senza contare calorie.</p>
-        <div class="meta-line">
-          <span class="chip">🕒 Lettura: 5 min</span>
-          <span class="chip">📌 Articolo</span>
-        </div>
-        <hr class="sep" />
-        <span class="btn primary">Leggi →</span>
-      </div>
-    </a>
-    
-    <a class="card" href="<?php echo home_url('/spuntini-intelligenti'); ?>" aria-label="Apri articolo: Spuntini intelligenti: 10 idee pratiche">
-      <div class="feature">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/posts/spuntini-intelligenti.svg" alt="Immagine in evidenza: Spuntini intelligenti: 10 idee pratiche" />
-        <div class="tag">🏷️ Stile di vita</div>
-        <div class="date">04/01/2026</div>
-      </div>
-      <div class="pad">
-        <h3>Spuntini intelligenti: 10 idee pratiche</h3>
-        <p>Quando serve uno spuntino? Ecco idee veloci che aiutano fame e energia.</p>
-        <div class="meta-line">
-          <span class="chip">🕒 Lettura: 4 min</span>
-          <span class="chip">📌 Articolo</span>
-        </div>
-        <hr class="sep" />
-        <span class="btn primary">Leggi →</span>
-      </div>
-    </a>
-    
-    <a class="card" href="<?php echo home_url('/idratazione'); ?>" aria-label="Apri articolo: Idratazione: quanta acqua serve davvero?">
-      <div class="feature">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/posts/idratazione.svg" alt="Immagine in evidenza: Idratazione: quanta acqua serve davvero?" />
-        <div class="tag">🏷️ Benessere</div>
-        <div class="date">28/12/2025</div>
-      </div>
-      <div class="pad">
-        <h3>Idratazione: quanta acqua serve davvero?</h3>
-        <p>Sete, colore delle urine e falsi miti: una guida semplice all'acqua quotidiana.</p>
-        <div class="meta-line">
-          <span class="chip">🕒 Lettura: 6 min</span>
-          <span class="chip">📌 Articolo</span>
-        </div>
-        <hr class="sep" />
-        <span class="btn primary">Leggi →</span>
-      </div>
-    </a>
+    <?php
+      $query = new WP_Query(['posts_per_page' => 3]);
+      ?>
+
+      <?php if ($query->have_posts()) : ?>
+        <?php  while ($query->have_posts()): $query->the_post();
+          get_template_part('partials/post');
+        endwhile; ?>
+      <?php else: ?>
+        <p>Nessun articolo pubblicato.</p>
+      <?php endif; ?>
   </div>
 
   <div style="margin-top:16px">
